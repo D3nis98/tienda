@@ -1,7 +1,17 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-bs-theme="dark">
 <head>
+    <header class="d-flex justify-content-between align-items-center p-3 border-bottom bg-body-tertiary">
+    <h1 class="h4 m-0 d-flex align-items-center gap-2">
+        <span>🎮</span> Tienda de Videojuegos
+    </h1>
+    
+    <button id="toggle-theme" class="btn btn-sm btn-outline-secondary d-flex align-items-center gap-2 rounded-pill px-3" aria-label="Cambiar tema">
+        <span class="theme-icon">🌙</span>
+        <span class="small fw-semibold d-none d-sm-inline">Modo</span>
+    </button>
+</header>
     <meta charset="UTF-8">
     <title>{% block title %}Tienda de Videojuegos{% endblock %}</title>
 
@@ -10,15 +20,15 @@
 
     <script src="{% static 'js/script.js' %}"></script>
 </head>
-<body class="bg-dark text-light">
+<body class="bg-body text-body">
 
     {% block content %}
     {% endblock %}
 
     <footer class="text-center mt-5 mb-3">
         <p>&copy; 2025 Tienda de Videojuegos</p>
-        <a href="{% url 'home' %}" class="text-light">Inicio</a>
-        <a href="{% url 'contacto' %}" class="text-light ms-3">Contacto</a>
+        <a href="{% url 'home' %}" class="text-body">Inicio</a>
+        <a href="{% url 'contacto' %}" class="text-body ms-3">Contacto</a>
     </footer>
 
 </body>
