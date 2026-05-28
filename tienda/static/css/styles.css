@@ -38,3 +38,38 @@
 .footer-section {
     text-align: center;
 }
+/* HEADER FIJO */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1030;
+
+    /* FONDO */
+    background-color: #212529;
+
+    /* BORDE */
+    border-bottom: 1px solid #343a40;
+
+    /* SOMBRA */
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.3);
+
+    /* EFECTO */
+    backdrop-filter: blur(10px);
+}
+
+/* NAVBAR */
+.site-header .navbar {
+    background-color: transparent;
+}
+
+/* ESPACIO PARA EL HEADER */
+body {
+    padding-top: 90px;
+}
+
+/* ESPACIO PARA EL HEADER */
+body {
+    padding-top: 90px;
+}

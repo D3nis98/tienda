@@ -20,149 +20,119 @@
         rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
 </head>
 
 <body class="bg-body text-body d-flex flex-column min-vh-100">
 
     <!-- HEADER -->
-    <header class="site-header">
+<header class="site-header fixed-top">
 
-        <nav class="navbar navbar-expand-lg container">
+    <nav class="navbar navbar-expand-lg container">
 
-            <!-- LOGO -->
-            <a 
-                class="navbar-brand site-logo"
-                href="{% url 'home' %}">
+        <!-- LOGO -->
+        <a 
+            class="navbar-brand site-logo"
+            href="{% url 'home' %}">
 
-                <span class="logo-icon">
-                    🎮
-                </span>
+            <span class="logo-icon">
+                🎮
+            </span>
 
-                <span class="logo-text">
-                    Tienda Gamer
-                </span>
+            <span class="logo-text">
+                Tienda Gamer
+            </span>
 
-            </a>
+        </a>
 
-            <!-- BOTÓN MENÚ RESPONSIVE -->
-            <button 
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#menuNavbar"
-                aria-controls="menuNavbar"
-                aria-expanded="false"
-                aria-label="Abrir menú">
+        <!-- BOTÓN MENÚ RESPONSIVE -->
+        <button 
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menuNavbar"
+            aria-controls="menuNavbar"
+            aria-expanded="false"
+            aria-label="Abrir menú">
 
-                <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
 
-            </button>
+        </button>
 
-            <!-- MENÚ -->
-            <div 
-                class="collapse navbar-collapse"
-                id="menuNavbar">
+        <!-- MENÚ -->
+        <div 
+            class="collapse navbar-collapse"
+            id="menuNavbar">
 
-                <!-- LINKS -->
-                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+            <!-- LINKS -->
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
 
-                    <li class="nav-item">
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="{% url 'home' %}">
+                        Inicio
+                    </a>
+                </li>
 
-                        <a 
-                            class="nav-link menu-link"
-                            href="{% url 'home' %}">
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="#">
+                        Tienda
+                    </a>
+                </li>
 
-                            Inicio
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="#">
+                        Noticias
+                    </a>
+                </li>
 
-                        </a>
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="#">
+                        Soporte
+                    </a>
+                </li>
 
-                    </li>
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="{% url 'contacto' %}">
+                        Contacto
+                    </a>
+                </li>
 
-                    <li class="nav-item">
+            </ul>
 
-                        <a 
-                            class="nav-link menu-link"
-                            href="#">
+            <!-- BUSCADOR -->
+            <form class="d-flex ms-lg-4 mt-3 mt-lg-0" role="search">
 
-                            Tienda
+                <input 
+                    class="form-control me-2"
+                    type="search"
+                    placeholder="Buscar videojuegos..."
+                    aria-label="Buscar">
 
-                        </a>
-
-                    </li>
-
-                    <li class="nav-item">
-
-                        <a 
-                            class="nav-link menu-link"
-                            href="#">
-
-                            Noticias
-
-                        </a>
-
-                    </li>
-
-                    <li class="nav-item">
-
-                        <a 
-                            class="nav-link menu-link"
-                            href="#">
-
-                            Soporte
-
-                        </a>
-
-                    </li>
-
-                    <li class="nav-item">
-
-                        <a 
-                            class="nav-link menu-link"
-                            href="{% url 'contacto' %}">
-
-                            Contacto
-
-                        </a>
-
-                    </li>
-
-                </ul>
-
-                <!-- BUSCADOR -->
-                <form class="d-flex ms-lg-4 mt-3 mt-lg-0" role="search">
-
-                    <input 
-                        class="form-control me-2"
-                        type="search"
-                        placeholder="Buscar videojuegos..."
-                        aria-label="Buscar">
-
-                    <button 
-                        class="btn btn-primary"
-                        type="submit">
-
-                        Buscar
-
-                    </button>
-
-                </form>
-
-                <!-- BOTÓN TEMA -->
                 <button 
-                    id="toggle-theme"
-                    class="btn btn-outline-secondary theme-btn ms-lg-3 mt-3 mt-lg-0">
+                    class="btn btn-primary"
+                    type="submit">
 
-                    🌙 / ☀️
+                    Buscar
 
                 </button>
 
-            </div>
+            </form>
 
-        </nav>
+            <!-- BOTÓN TEMA -->
+            <button 
+                id="toggle-theme"
+                class="btn btn-outline-secondary theme-btn ms-lg-3 mt-3 mt-lg-0">
 
-    </header>
+                🌙 / ☀️
+
+            </button>
+
+        </div>
+
+    </nav>
+
+</header>
 
     <!-- CONTENIDO -->
     <main class="main-content container py-5 flex-grow-1">
@@ -259,21 +229,7 @@
 
                 </p>
 
-                <p class="footer-text mb-2">
-
-                    🏬 Sucursal Norte<br>
-                    <br>
-                    San Pedro Sula, Honduras
-
-                </p>
-
-                <p class="footer-text">
-
-                    🏬 Sucursal Costa<br>
-                    <br>
-                    La Ceiba, Honduras
-
-                </p>
+                
 
             </div>
 
