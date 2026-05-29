@@ -47,7 +47,7 @@
     z-index: 1030;
 
     /* FONDO */
-    background-color: #212529;
+    background-color: var(--bs-body-bg);
 
     /* BORDE */
     border-bottom: 1px solid #343a40;
@@ -61,15 +61,11 @@
 
 /* NAVBAR */
 .site-header .navbar {
-    background-color: transparent;
+    background-color: var(--bs-body-bg);
 }
 
 /* ESPACIO PARA EL HEADER */
 body {
-    padding-top: 90px;
+    padding-top: 90px; background-color: var(--bs-body-bg);
 }
 
-/* ESPACIO PARA EL HEADER */
-body {
-    padding-top: 90px;
-}
