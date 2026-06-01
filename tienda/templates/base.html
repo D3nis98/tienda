@@ -34,7 +34,7 @@
         <!-- LOGO -->
         <a 
             class="navbar-brand site-logo"
-            href="{% url 'home' %}">
+            href="{% url 'inicio' %}">
 
             <span class="logo-icon">
                 🎮
@@ -69,7 +69,7 @@
             <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
 
                 <li class="nav-item">
-                    <a class="nav-link menu-link" href="{% url 'home' %}">
+                    <a class="nav-link menu-link" href="{% url 'inicio' %}">
                         Inicio
                     </a>
                 </li>
@@ -101,23 +101,11 @@
             </ul>
 
             <!-- BUSCADOR -->
-            <form class="d-flex ms-lg-4 mt-3 mt-lg-0" role="search">
-
-                <input 
-                    class="form-control me-2"
-                    type="search"
-                    placeholder="Buscar videojuegos..."
-                    aria-label="Buscar">
-
-                <button 
-                    class="btn btn-primary"
-                    type="submit">
-
-                    Buscar
-
-                </button>
-
-            </form>
+            <form class="d-flex mb-2 mb-lg-0 me-lg-3 order-5 order-lg-4" role="search" action="{% url 'buscar_juegos' %}" method="get">
+                        <input class="form-control me-2" type="search" name="q" placeholder="Buscar..." aria-label="Buscar"
+                            value="{{ request.GET.q|default:'' }}">
+                        <button class="btn btn-outline-info" type="submit">Buscar</button>
+                    </form>
 
             <!-- BOTÓN TEMA -->
             <button 
@@ -179,7 +167,7 @@
                 <ul class="list-unstyled footer-links">
 
                     <li>
-                        <a href="{% url 'home' %}" class="footer-link">
+                        <a href="{% url 'inicio' %}" class="footer-link">
                             Inicio
                         </a>
                     </li>
