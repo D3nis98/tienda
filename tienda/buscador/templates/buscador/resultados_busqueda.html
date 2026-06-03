@@ -11,9 +11,9 @@
     <div class="row">
         {% for juego in lista_juegos %}
         <div class="col-md-4 mb-3">
-            <div class="card h-100 shadow-sm">
-                <a href="app_name = 'catalogo'" class="text-decoration-none text-body">
-                    <img src="{% static 'img/portadas/'|add:juego.imagen %}" class="card-img-top"
+            <div class="card h-100 shadow-sm juego-card">
+                <a href="{% url 'catalogo:detalle_juego' juego.id %}" class="text-decoration-none text-body">
+                    <img src="{% static 'img/portadas/'|add:juego.imagen %}" class="card-img-top juego-card-img"
                         alt="{{ juego.nombre }}">
                     <div class="card-body text-start">
                         <h5 class="card-title">{{ juego.nombre }}</h5>
@@ -66,4 +66,4 @@
     <p class="text-center mt-4 text-body">No se encontraron resultados.</p>
     {% endif %}
 </div>
-{% endblock %}y
+{% endblock %}

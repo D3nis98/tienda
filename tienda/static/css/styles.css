@@ -69,3 +69,32 @@ body {
     padding-top: 90px; background-color: var(--bs-body-bg);
 }
 
+/* =========================================================
+   CATÁLOGO Y TARJETAS
+========================================================= */
+
+/* Efecto hover para crecer la tarjeta */
+.juego-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.juego-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.juego-card-img {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+/* Efecto hover solo para la imagen de detalle */
+.detalle-img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.detalle-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.25);
+}
