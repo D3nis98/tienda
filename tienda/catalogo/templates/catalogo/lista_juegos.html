@@ -17,12 +17,14 @@ Tienda de Juegos
 
         <div class="card h-100 juego-card shadow-sm">
 
-            <img
-                src="{% static 'img/portadas/' %}{{ juego.imagen }}"
-                class="card-img-top juego-card-img"
-                alt="{{ juego.nombre }}">
+            <a href="{% url 'catalogo:detalle_juego' juego.id %}" class="text-decoration-none text-body">
 
-            <div class="card-body">
+                <img
+                    src="{% static 'img/portadas/' %}{{ juego.imagen }}"
+                    class="card-img-top juego-card-img"
+                    alt="{{ juego.nombre }}">
+
+                <div class="card-body">
 
                 <h5 class="card-title">
                     {{ juego.nombre }}
@@ -36,7 +38,9 @@ Tienda de Juegos
                     Precio: {{ juego.precio }} €
                 </p>
 
-            </div>
+                </div>
+
+            </a>
 
         </div>
 
