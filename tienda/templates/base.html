@@ -1,0 +1,269 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {% block title %}
+            Tienda de Videojuegos
+        {% endblock %}
+    </title>
+
+    <!-- Bootstrap -->
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+</head>
+
+<body class="bg-body text-body d-flex flex-column min-vh-100">
+
+    <!-- HEADER -->
+<header class="site-header fixed-top">
+
+    <nav class="navbar navbar-expand-lg container">
+
+        <!-- LOGO -->
+        <a 
+            class="navbar-brand site-logo"
+            href="{% url 'inicio' %}">
+
+            <span class="logo-icon">
+                🎮
+            </span>
+
+            <span class="logo-text">
+                Tienda Gamer
+            </span>
+
+        </a>
+
+        <!-- BOTÓN MENÚ RESPONSIVE -->
+        <button 
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menuNavbar"
+            aria-controls="menuNavbar"
+            aria-expanded="false"
+            aria-label="Abrir menú">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <!-- MENÚ -->
+        <div 
+            class="collapse navbar-collapse"
+            id="menuNavbar">
+
+            <!-- LINKS -->
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="{% url 'inicio' %}">
+                        Inicio
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="{% url 'catalogo:lista_juegos' %}">
+                        Tienda
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="#">
+                        Noticias
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="#">
+                        Soporte
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="{% url 'contacto' %}">
+                        Contacto
+                    </a>
+                </li>
+
+            </ul>
+
+            <!-- BUSCADOR -->
+            <form class="d-flex mb-2 mb-lg-0 me-lg-3 order-5 order-lg-4" role="search" action="{% url 'buscar_juegos' %}" method="get">
+                        <input class="form-control me-2" type="search" name="q" placeholder="Buscar..." aria-label="Buscar"
+                            value="{{ request.GET.q|default:'' }}">
+                        <button class="btn btn-outline-info" type="submit">Buscar</button>
+                    </form>
+
+            <!-- BOTÓN TEMA -->
+            <button 
+                id="toggle-theme"
+                class="btn btn-outline-secondary theme-btn ms-lg-3 mt-3 mt-lg-0">
+
+                🌙 / ☀️
+
+            </button>
+
+        </div>
+
+    </nav>
+
+</header>
+
+    <!-- CONTENIDO -->
+    <main class="main-content container py-5 flex-grow-1">
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
+
+    <!-- FOOTER -->
+    <!-- FOOTER -->
+<footer class="site-footer">
+
+    <div class="container">
+
+        <div class="row justify-content-center text-center g-4">
+
+            <!-- SOBRE NOSOTROS -->
+            <div class="col-lg-3 col-md-6">
+
+                <h5 class="footer-title">
+
+                    🎮 Sobre Nosotros
+
+                </h5>
+
+                <p class="footer-text">
+
+                    En Tienda Gamer teh best tienda 
+
+                </p>
+
+            </div>
+
+            <!-- ENLACES -->
+            <div class="col-lg-3 col-md-6">
+
+                <h5 class="footer-title">
+
+                    🔗 Enlaces
+
+                </h5>
+
+                <ul class="list-unstyled footer-links">
+
+                    <li>
+                        <a href="{% url 'inicio' %}" class="footer-link">
+                            Inicio
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'catalogo:lista_juegos' %}" class="footer-link">
+                            Tienda
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'contacto' %}" class="footer-link">
+                            Contacto
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <!-- SUCURSALES -->
+            <div class="col-lg-3 col-md-6">
+
+                <h5 class="footer-title">
+
+                    📍 Nuestras Tiendas
+
+                </h5>
+
+                <p class="footer-text mb-2">
+
+                    🏬 Sucursal Centro<br>
+                    <br>
+                    Tegucigalpa, Honduras
+
+                </p>
+
+                
+
+            </div>
+
+            <!-- CONTACTO -->
+            <div class="col-lg-3 col-md-6">
+
+                <h5 class="footer-title">
+
+                    📞 Contacto
+
+                </h5>
+
+                <p class="footer-text mb-2">
+
+                    📧 soporte@tiendagamer.com
+
+                </p>
+
+                <p class="footer-text mb-2">
+
+                    ☎️ +504 9999-9999
+
+                </p>
+
+                <p class="footer-text">
+
+                    🕒 Lunes a Sábado<br>
+                    9:00 AM - 8:00 PM
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- LINEA -->
+        <hr class="footer-divider">
+
+        <!-- COPYRIGHT -->
+        <div class="footer-copy text-center">
+
+            &copy; 2025 Tienda Gamer.
+            Todos los derechos reservados.
+
+        </div>
+
+    </div>
+
+</footer>
+
+    <!-- Bootstrap JS -->
+    <script 
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- JS -->
+    <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+
+</html>

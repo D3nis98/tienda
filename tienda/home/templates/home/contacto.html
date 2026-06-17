@@ -1,26 +1,40 @@
-<!-- index.html -->
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Tienda de Videojuegos</title>
-</head>
+{% extends "base.html" %}
+{% load static %}
 
-<body>
+{% block title %}
+Contacto - Tienda de Videojuegos
+{% endblock %}
 
-    <h1>Bienvenido a la Tienda de Videojuegos</h1>
+{% block content %}
 
-    <p>
-        Explora nuestro catálogo y disfruta.
-    </p>
+<h1 class="text-body mb-4">
+    Contacto
+</h1>
 
-    <footer>
-        <p>© 2025 Tienda de Videojuegos</p>
+<p class="text-body">
 
-        <a href="{% url 'home' %}">
-            Inicio
-        </a>
-    </footer>
+    Envía un correo a
 
-</body>
-</html>
+    <a 
+        href="mailto:contacto@tiendavideojuegos.com"
+        class="text-body">
+
+        contacto@tiendavideojuegos.com
+
+    </a>
+
+</p>
+
+<div class="alert alert-primary">
+    Estamos disponibles de lunes a viernes de 9:00 a 18:00.
+</div>
+
+<div class="alert alert-warning">
+    El tiempo de respuesta puede variar según la demanda.
+</div>
+
+<div class="alert alert-danger">
+    No envíes información sensible por este formulario.
+</div>
+
+{% endblock %}
